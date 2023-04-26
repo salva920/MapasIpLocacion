@@ -1,7 +1,7 @@
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import { BiCurrentLocation } from "react-icons/bi";
 
-function Controles({ miLocacion }) {
+function Controles({ miLocacion, nocturno, setNocturno }) {
   return (
     <div className="controles">
       <button
@@ -14,8 +14,13 @@ function Controles({ miLocacion }) {
       <button
         type="button"
         className="border border-dark  btn btn-primary rounded-circle"
+        onClick={() => setNocturno(!nocturno)}
       >
-        <BsFillMoonStarsFill />
+        {
+            nocturno 
+            ? <BsFillMoonStarsFill />
+            : <BsFillSunFill />
+        }
       </button>
     </div>
   );

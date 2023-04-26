@@ -7,6 +7,7 @@ import Busqueda from "./components/Busqueda";
 import Controles from "./components/Controles";
 
 function MapaIp() {
+  const [nocturno, setNocturno] = useState(false);
   const [busca, setBusca] = useState("");
   const [ip, setIp] = useState("");
   const [datos, setDatos] = useState({});
@@ -19,23 +20,27 @@ function MapaIp() {
   const buscar = () => {
     setIp(busca);
     query.remove();
-  }
+  };
 
   const miLocacion = () => {
     setIp("");
     query.remove();
-  }
+  };
 
   if (query.status == "loading") return <Cargando />;
   if (query.status == "error") {
     miLocacion();
     return <div>Error</div>;
-  };
+  }
 
   return (
     <>
       <Busqueda setBusca={setBusca} buscar={buscar} />
-      <Controles miLocacion={miLocacion} />
+      <Controles
+        miLocacion={miLocacion}
+        nocturno={nocturno}
+        setNocturno={setNocturno}
+      />
       <Mapa
         ip={query.data.data.ip}
         lat={query.data.data.location.lat}
@@ -43,6 +48,7 @@ function MapaIp() {
         zonaHoraria={query.data.data.location.timezone}
         ciudad={query.data.data.location.city}
         pais={query.data.data.location.country}
+        nocturno={nocturno}
       />
     </>
   );
