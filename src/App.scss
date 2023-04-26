@@ -7,4 +7,13 @@
 .leaflet-container{
   width: 100vw;
   height: 100vh;
+  z-index: 10;
+}
+
+.busqueda{
+  position: absolute;
+  z-index: 100;
+  top: 20px;
+  right: 20px;
+  max-width: 250px;
 }
