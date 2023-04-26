@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./App.scss";
 import * as bootstrap from "bootstrap";
 import "animate.css";
+import "leaflet/dist/leaflet.css"
 import App from "./App";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
