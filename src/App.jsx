@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import Mapa from "./components/Mapa";
 import Cargando from "./components/Cargando";
 import Busqueda from "./components/Busqueda";
+import Controles from "./components/Controles";
 
 function App() {
   const [busca, setBusca] = useState("");
@@ -20,6 +21,7 @@ function App() {
   return (
     <>
       <Busqueda />
+      <Controles />
       <Mapa />
     </>
   );
