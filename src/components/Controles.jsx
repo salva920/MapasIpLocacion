@@ -18,8 +18,8 @@ function Controles({ miLocacion, nocturno, setNocturno }) {
       >
         {
             nocturno 
-            ? <BsFillMoonStarsFill />
-            : <BsFillSunFill />
+            ? <BsFillSunFill />
+            : <BsFillMoonStarsFill />
         }
       </button>
     </div>

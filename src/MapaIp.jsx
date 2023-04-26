@@ -5,12 +5,12 @@ import Mapa from "./components/Mapa";
 import Cargando from "./components/Cargando";
 import Busqueda from "./components/Busqueda";
 import Controles from "./components/Controles";
+import Swal from "sweetalert2";
 
 function MapaIp() {
   const [nocturno, setNocturno] = useState(false);
   const [busca, setBusca] = useState("");
   const [ip, setIp] = useState("");
-  const [datos, setDatos] = useState({});
 
   const query = useQuery({
     queryKey: ["miIP"],
@@ -18,8 +18,16 @@ function MapaIp() {
   });
 
   const buscar = () => {
-    setIp(busca);
-    query.remove();
+    const regExIp = new RegExp(
+      "^(\\b25[0-5]|\\b2[0-4][0-9]|\\b[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$"
+    );
+
+    if (regExIp.test(busca)) {
+      setIp(busca);
+      query.remove();
+    }else{
+        Swal.fire("Error!", "IP invalida", "error");
+    }
   };
 
   const miLocacion = () => {
