@@ -7,7 +7,7 @@ function Busqueda({setBusca, buscar}) {
         <input
           type="text"
           className="form-control"
-          placeholder="Buscar"
+          placeholder="Buscar por IPv4"
           onChange={(e) => setBusca(e.target.value)}
         />
         <button className="btn btn-primary" type="button" id="button-addon2" onClick={buscar}>
