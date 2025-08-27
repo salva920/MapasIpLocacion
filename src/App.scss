@@ -1,0 +1,26 @@
+// importacion de los archivos con las variables, animaciones y fuentes
+@import "./scss/variables";
+
+// importacion de bootstrap
+@import "bootstrap";
+
+.leaflet-container{
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+.busqueda{
+  position: absolute;
+  z-index: 100;
+  top: 20px;
+  right: 20px;
+  max-width: 250px;
+}
+
+.controles{
+  position: absolute;
+  z-index: 100;
+  bottom: 20px;
+  right: 20px;
+}
